@@ -1,0 +1,40 @@
+{
+  "name": "Explorer_UI_for_insight_API",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack-dev-server --inline --mode development"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^8.6.5",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "node-sass": "^4.9.2",
+    "postcss-loader": "^2.1.5",
+    "sass-loader": "^7.0.3",
+    "vue-loader": "^15.2.4",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^2.1.5",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-serve": "^1.0.4"
+  },
+  "dependencies": {
+    "bignumber.js": "^7.2.1",
+    "bootstrap": "^4.1.1",
+    "buffer": "^5.1.0",
+    "create-hash": "^1.2.0",
+    "jquery": "^3.3.1",
+    "moment": "^2.22.2",
+    "popper.js": "^1.14.3",
+    "socket.io-client": "^2.1.1",
+    "vue": "^2.5.16",
+    "vue-i18n": "^7.8.1",
+    "vue-router": "^3.0.1"
+  }
+}

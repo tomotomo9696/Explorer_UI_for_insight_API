@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Explorer</title>
+    
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+    body {
+      padding-top: 5rem;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <app-header></app-header>
+      </header>
+      
+      <main role="main" class="container">
+        <router-view v-title="title"></router-view>
+      </main>
+    </div>
+    
+    <script src="/bundle.js"></script>
+  </body>
+</html>

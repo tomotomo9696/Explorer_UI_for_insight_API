@@ -1,0 +1,159 @@
+$theme-color: #A6A6A6;
+$shadow-color: #DBDBDB;
+$border-color: #EAEAEA;
+
+$block-background-color: #F4F4F4;
+
+$navbar-dark-color: #FFF;
+
+$dark : $theme-color;
+
+$input-group-addon-color: #e9ecef;
+$input-group-addon-bg: #343a40;
+$input-group-addon-border-color: #495057;
+
+$font-family-base: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, 'メイリオ', Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+
+$font-size-base: .875rem;
+
+@import "~bootstrap/scss/bootstrap.scss";
+
+
+.tx-box{
+  background-color: $block-background-color;
+  overflow: hidden;
+  padding: 10px;
+  margin: 2em 0px;
+  box-shadow:2px 2px 10px 2px $shadow-color;
+}
+
+.panel-address{
+  background-color: #FFF;
+  overflow: hidden;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  border: 1px solid $border-color;
+  margin: 8px 0px;
+  
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.summary-table > tbody > tr:first-child > td,
+.summary-table > tbody > tr:first-child > th {
+  border: none;
+}
+.summary-table{
+  table-layout: fixed;
+}
+.summary-table td{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: right;
+  width: calc(100% - 10em);
+}
+
+
+.sum-table th{
+  padding-right : 2em;
+}
+.sum-table td{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: right;
+}
+
+
+.realtime-tx-table{
+  table-layout: fixed;
+}
+.realtime-tx-table td{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.realtime-tx-table td:nth-child(2),
+.realtime-tx-table th:nth-child(2) {
+  text-align: right;
+}
+
+.realtime-block-table td{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.realtime-block-table td:nth-child(5),
+.realtime-block-table th:nth-child(5) {
+  text-align: right;
+}
+
+
+
+.title{
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.big-text{
+  font-size: 26px;
+}
+
+.bold-number{
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.toggle-button{
+  cursor: pointer;
+  user-select: none;
+}
+.toggle-button > i{
+  font-size: 32px;
+}
+
+hr{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top: 1px solid $border-color;
+}
+
+.header-status {
+  padding: .375rem .75rem;
+  font-size: $font-size-base;
+  color: $gray-200;
+  white-space: nowrap;
+  background-color: $gray-800;
+  border: 1px solid $gray-700;
+  border-radius: .25rem;
+}
+
+.material-icons.md-default {
+  font-size: ($font-size-base * 1.5);
+  line-height: 1;
+}
+
+
+.scriptBox{
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  padding: .8em;
+
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+@import "./loading.scss";
+@import "./script.scss";
+
+
