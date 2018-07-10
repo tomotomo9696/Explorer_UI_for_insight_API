@@ -2,8 +2,9 @@ import 'bootstrap';
 import './scss/index.scss';
 
 import Vue from 'vue';
-import VueRouter from 'vue-router'
+import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
+import VueCookie from 'vue-cookie';
 
 import Header from './component/Header.vue';
 
@@ -13,15 +14,17 @@ import CONFIG from './config';
 
 import moment from "moment";
 
+Vue.use(VueCookie);
+
 //language
-const lang = (window.navigator.languages && window.navigator.languages[0]) || window.navigator.language || window.navigator.userLanguage || window.navigator.browserLanguage;
+const browserLang = (window.navigator.languages && window.navigator.languages[0]) || window.navigator.language || window.navigator.userLanguage || window.navigator.browserLanguage || "en";
 
-moment.locale(lang);
-
+moment.locale(browserLang);
 
 Vue.use(VueI18n);
 const i18n = new VueI18n({
-  locale: lang,
+  locale: browserLang,
+  fallbackLocale: "en",
   messages: langs
 });
 
@@ -60,6 +63,11 @@ new Vue({
       title : CONFIG.name
     }
   },
+  created(){
+    let cookieLang = this.$cookie.get("lang");
+    let lang = cookieLang || browserLang;
+    this.changeLocale(lang);
+  },
   methods : {
     setTitle(page, data){
       data = data ? ` ${data}` : "";
@@ -70,6 +78,9 @@ new Vue({
         return;
       this._i18n.locale = locale;
       moment.locale(locale);
+
+      this.$cookie.set("lang", locale, { expires: '1Y' });
+
       this.$emit("changedLocale", locale);
     }
   },

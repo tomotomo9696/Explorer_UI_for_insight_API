@@ -1,20 +1,4 @@
-$theme-color: #A6A6A6;
-$shadow-color: #DBDBDB;
-$border-color: #EAEAEA;
-
-$block-background-color: #F4F4F4;
-
-$navbar-dark-color: #FFF;
-
-$dark : $theme-color;
-
-$input-group-addon-color: #e9ecef;
-$input-group-addon-bg: #343a40;
-$input-group-addon-border-color: #495057;
-
-$font-family-base: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, 'メイリオ', Osaka, 'MS PGothic', arial, helvetica, sans-serif;
-
-$font-size-base: .875rem;
+@import "./variable.scss";
 
 @import "~bootstrap/scss/bootstrap.scss";
 
