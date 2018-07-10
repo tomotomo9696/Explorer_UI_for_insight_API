@@ -98,17 +98,21 @@
 </template>
 
 <script>
-import loading from "../component/loading.vue";
+import CONFIG from "../config";
+
+import Loading from "../component/loading.vue";
 import Tx from "../component/transaction.vue";
+
 import Socket from "../socket";
 import request from "../request";
+import util from "../util";
+import script from "../util/script";
+import OP from "../util/opcode";
+
 import moment from "moment";
 import BigNumber from 'bignumber.js';
 
-import util from "../util";
 
-import script from "../util/script";
-import OP from "../util/opcode";
 
 
 export default {
@@ -143,7 +147,7 @@ export default {
         return;
       }
 
-      let res = await request(`${this.$root.endpoint}/tx/${this.$route.params.txid}`).catch(v => false);
+      let res = await request(`/tx/${this.$route.params.txid}`).catch(v => false);
       
       if(!res){
         this.$router.replace(`/404`);
@@ -157,7 +161,7 @@ export default {
 
     },
     valueConvertion(value) {
-      return new BigNumber(value).toString(10) + ` ${this.$root.currencySymbol}`;
+      return util.valueConvertion(value);
     },
     reset(){
       Object.assign(this.$data, this.$options.data());
@@ -229,7 +233,7 @@ export default {
   },
   components: {
     "transaction": Tx,
-    "loading": loading
+    "loading": Loading
   }
 }
 </script>

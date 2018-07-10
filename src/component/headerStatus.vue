@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     async fetchData(){
-      let res = await request(`${this.$root.endpoint}/status?q=getInfo`).catch(v => false);
+      let res = await request(`/status?q=getInfo`).catch(v => false);
       if(res)
         this.height = Math.max(this.height, res.info.blocks);
     },

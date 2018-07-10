@@ -65,14 +65,17 @@
 </template>
 
 <script>
-import loading from "../component/loading.vue";
+import CONFIG from "../config";
+
+import Loading from "../component/loading.vue";
 import Tx from '../component/transaction.vue';
+
 import Socket from "../socket";
 import request from "../request";
-import moment from "moment";
-import BigNumber from 'bignumber.js';
-
 import util from "../util";
+
+import moment from "moment";
+
 
 export default {
   data(){
@@ -107,7 +110,7 @@ export default {
         return;
       }
       
-      let res = await request(`${this.$root.endpoint}/block/${this.$route.params.blockid}`).catch(v => false);
+      let res = await request(`/block/${this.$route.params.blockid}`).catch(v => false);
       
       if(!res){
         this.$router.replace(`/404`);
@@ -127,7 +130,7 @@ export default {
         
       this.txLoading = true;
  
-      let res = await request(`${this.$root.endpoint}/txs/?block=${this.block.hash}&pageNum=${this.pageNum}`).catch(v => false);
+      let res = await request(`/txs/?block=${this.block.hash}&pageNum=${this.pageNum}`).catch(v => false);
       
       if(res && hash === this.block.hash){
         this.txs.push(...res.txs);
@@ -138,15 +141,14 @@ export default {
           this.loadedTxs = true;
         }
       }
-      
-      
+
       this.txLoading = false;
     },
     handleMessage(msg){
 
     },
-    valueConvertion(value) {
-      return new BigNumber(value).toString(10) + ` ${this.$root.currencySymbol}`;
+    valueConvertion(value){
+      return util.valueConvertion(value);
     },
     reset () {
       Object.assign(this.$data, this.$options.data());
@@ -159,7 +161,7 @@ export default {
   },
   components: {
     "transaction": Tx,
-    "loading": loading
+    "loading": Loading
   }
 }
 </script>

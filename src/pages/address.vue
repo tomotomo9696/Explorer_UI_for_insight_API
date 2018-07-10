@@ -13,15 +13,15 @@
       <tbody>
         <tr>
           <th scope="row">{{ $t("address.totalReceived") }}</th>
-          <td>{{address.totalReceived + " " +  $root.currencySymbol}}</td>
+          <td>{{ valueConvertion(address.totalReceived) }}</td>
         </tr>
         <tr>
           <th scope="row">{{ $t("address.totalSent") }}</th>
-          <td>{{address.totalSent + " " +  $root.currencySymbol}}</td>
+          <td>{{ valueConvertion(address.totalSent) }}</td>
         </tr>
         <tr>
           <th scope="row">{{ $t("address.finalBalance") }}</th>
-          <td>{{address.balance + " " +  $root.currencySymbol}}</td>
+          <td>{{ valueConvertion(address.balance) }}</td>
         </tr>
         <tr>
           <th scope="row">{{ $t("word.transactionCount") }}</th>
@@ -47,10 +47,12 @@
 </template>
 
 <script>
-import loading from "../component/loading.vue";
-import Tx from "../component/transaction.vue";
-import request from "../request";
+import CONFIG from "../config";
 
+import Loading from "../component/loading.vue";
+import Tx from "../component/transaction.vue";
+
+import request from "../request";
 import util from "../util";
 
 export default {
@@ -82,7 +84,7 @@ export default {
         return;
       }
 
-      let res = await request(`${this.$root.endpoint}/addr/${this.$route.params.address}?noTxList=1`).catch(v => false);
+      let res = await request(`/addr/${this.$route.params.address}?noTxList=1`).catch(v => false);
       
       if(!res){
         this.$router.replace(`/404`);
@@ -100,7 +102,7 @@ export default {
         
       this.txLoading = true;
  
-      let res = await request(`${this.$root.endpoint}/txs/?address=${this.address.addrStr}&pageNum=${this.pageNum}`).catch(v => false);
+      let res = await request(`/txs/?address=${this.address.addrStr}&pageNum=${this.pageNum}`).catch(v => false);
       
       if(res && this.address.addrStr === addr){
         this.txs.push(...res.txs);
@@ -114,13 +116,16 @@ export default {
  
       this.txLoading = false;
     },
+    valueConvertion(value){
+      return util.valueConvertion(value);
+    },
     reset () {
       Object.assign(this.$data, this.$options.data());
     }
   },
   components: {
     "transaction": Tx,
-    "loading": loading
+    "loading": Loading
   }
 }
 </script>

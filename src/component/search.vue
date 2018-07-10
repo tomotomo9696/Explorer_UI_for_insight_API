@@ -11,6 +11,8 @@
 
 
 <script>
+import CONFIG from "../config";
+
 import request from "../request";
 
 
@@ -38,14 +40,14 @@ export default {
       }else if(/^\d+$/.test(ss)){
         searchList.push("block-index");
       }else{
-        let addr = new RegExp(`^[${this.$root.p2pkh}${this.$root.p2sh}][a-km-zA-HJ-NP-Z0-9]{26,33}$`, '');
-        let bech32 = new RegExp(`^${this.$root.bech32}1[qpzry9x8gf2tvdw0s3jn54khce6mua7l]{39,59}$`, 'i');
+        let addr = new RegExp(`^[${CONFIG.p2pkh}${CONFIG.p2sh}][a-km-zA-HJ-NP-Z0-9]{26,33}$`, '');
+        let bech32 = new RegExp(`^${CONFIG.bech32}1[qpzry9x8gf2tvdw0s3jn54khce6mua7l]{39,59}$`, 'i');
         if(addr.test(ss) || bech32.test(ss))
           searchList.push("addr");
       }
       
       for(let v of searchList){
-        let res = await request(`${this.$root.endpoint}/${v}/${ss}${v === "tx" ? "?noTxList=1" : ""}`).catch(err => false);
+        let res = await request(`/${v}/${ss}${v === "tx" ? "?noTxList=1" : ""}`).catch(err => false);
         if (!res) {
           continue;
         }

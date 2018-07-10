@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   name : "BitZeny explorer",
 
   endpoint : "https://zenyinsight.tomotomo9696.xyz/api",

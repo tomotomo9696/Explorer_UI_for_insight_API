@@ -40,7 +40,7 @@
         </tr>
         <tr v-for="tx in txs">
           <td><router-link :to="`/tx/${tx.txid}`">{{tx.txid}}</router-link></td>
-          <td>{{ tx.valueOut + " " + $root.currencySymbol}}</td>
+          <td>{{ valueConvertion(tx.valueOut) }}</td>
         </tr>
       </tbody>
     </table>
@@ -50,9 +50,13 @@
 </template>
 
 <script>
+import CONFIG from "../config";
+
 import Tx from '../component/transaction.vue';
+
 import Socket from "../socket";
 import request from "../request";
+import util from "../util";
 
 import moment from "moment";
 
@@ -72,13 +76,16 @@ export default {
       
     },
     async onBlock(block){
-      let res = await request(`${this.$root.endpoint}/block/${block}`).catch(v => false);
+      let res = await request(`/block/${block}`).catch(v => false);
       if(!res)
         return;
       res.txlength = res.tx.length;
       this.blocks.unshift(res);
       this.blocks = this.blocks.slice(0, 5);
       this.computeAge();
+    },
+    valueConvertion(value){
+      return util.valueConvertion(value);
     },
     computeAge(){
       this.age = this.blocks.map(d => moment(d.time, "X").fromNow());
@@ -91,7 +98,7 @@ export default {
     
     this.$root.setTitle("Home");
     
-    let res = await request(`${this.$root.endpoint}/blocks?limit=5`).catch(v => false);
+    let res = await request(`/blocks?limit=5`).catch(v => false);
     if(!res)
       return;
 

@@ -64,13 +64,16 @@
 </template>
 
 <script>
+import CONFIG from "../config";
+
+import util from "../util";
 import script from "../util/script";
 import OP from "../util/opcode";
-
-import {Buffer} from "buffer/";
-import BigNumber from 'bignumber.js';
 import hash from "../util/hash";
 import segwit_addr from "../lib/segwit_addr";
+
+import {Buffer} from "buffer/";
+
 
 export default {
   data(){
@@ -93,7 +96,7 @@ export default {
             }else{
               let buf = new Buffer(data.txinwitness[data.txinwitness.length-1], "hex");
               buf =  buf.length === 33 ? hash.hash160(buf) : hash.sha256(buf);
-              vin[i].addr = segwit_addr.encode(this.$root.bech32, 0, buf);
+              vin[i].addr = segwit_addr.encode(CONFIG.bech32, 0, buf);
             }
           }
         });
@@ -110,7 +113,7 @@ export default {
           let buf = new Buffer(data.scriptPubKey.hex, "hex");
           let stack = script.parseScript(buf);
           if(stack.length === 3 && stack[0] == OP._0 && (stack[2].length === 20 || stack[1].length === 32)){
-            vout[i].scriptPubKey.addresses = [segwit_addr.encode(this.$root.bech32, 0, stack[2])];
+            vout[i].scriptPubKey.addresses = [segwit_addr.encode(CONFIG.bech32, 0, stack[2])];
           }
         }
         
@@ -147,7 +150,7 @@ export default {
       this.voutShowAll = !this.voutShowAll;
     },
     valueConvertion(value) {
-      return new BigNumber(value).toString(10) + ` ${this.$root.currencySymbol}`;
+      return util.valueConvertion(value);
     }
   },
   props: {

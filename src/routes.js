@@ -1,5 +1,6 @@
 import home from "./pages/home.vue";
 import block from "./pages/block.vue";
+import blockHeight from "./pages/block-height.vue";
 import tx from "./pages/transaction.vue";
 import address from "./pages/address.vue";
 import notfound from "./pages/notfound.vue";
@@ -17,6 +18,10 @@ export default [
     {
         path : '/block/:blockid',
         component : block
+    },
+    {
+        path : '/block-height/:blockHeight',
+        component : blockHeight
     },
     {
         path : '/tx/:txid',

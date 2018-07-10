@@ -1,8 +1,6 @@
 import 'bootstrap';
 import './scss/index.scss';
 
-
-
 import Vue from 'vue';
 import VueRouter from 'vue-router'
 import VueI18n from 'vue-i18n';
@@ -11,7 +9,7 @@ import Header from './component/Header.vue';
 
 import langs from './languages';
 
-import config from './config';
+import CONFIG from './config';
 
 import moment from "moment";
 
@@ -57,11 +55,15 @@ Vue.component("app-header", Header);
 new Vue({
   el: '#app',
   i18n: i18n,
-  data : Object.assign(config, {title : config.name}),
+  data(){
+    return {
+      title : CONFIG.name
+    }
+  },
   methods : {
     setTitle(page, data){
       data = data ? ` ${data}` : "";
-      this.title = `${page}${data} | ${this.$root.name}`;
+      this.title = `${page}${data} | ${CONFIG.name}`;
     },
     changeLocale(locale){
       if(!locale)
