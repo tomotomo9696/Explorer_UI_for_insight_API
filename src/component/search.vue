@@ -4,7 +4,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text"><i class="material-icons md-default">search</i></span>
       </div>
-      <input class="form-control form-control-sm" type="search" :placeholder="$t('header.search.placeholder')" @keyup.enter="search" v-model="searchString">
+      <input class="form-control" type="search" :placeholder="$t('header.search.placeholder')" @keyup.enter="search" v-model="searchString">
     </div>
   </div>
 </template>

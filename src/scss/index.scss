@@ -58,19 +58,27 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.realtime-tx-table td:nth-child(2),
-.realtime-tx-table th:nth-child(2) {
-  text-align: right;
-}
 
-.realtime-block-table td{
+.block-list-table td,
+.block-list-table th{
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  text-align: center;
 }
 
-.realtime-block-table td:nth-child(5),
-.realtime-block-table th:nth-child(5) {
+.block-list-table td:nth-child(4),
+.block-list-table th:nth-child(4) {
+  max-width : 10em;
+}
+
+.block-list-table td:nth-child(1),
+.block-list-table th:nth-child(1) {
+  text-align: left;
+}
+
+.block-list-table td:nth-child(5),
+.block-list-table th:nth-child(5) {
   text-align: right;
 }
 
@@ -139,5 +147,5 @@ hr{
 
 @import "./loading.scss";
 @import "./script.scss";
-
+@import "./datepicker_custom.scss";
 

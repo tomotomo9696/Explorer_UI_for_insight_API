@@ -51,6 +51,20 @@ module.exports = {
     totalSent : "Total sent",
     finalBalance : "Final balance"
   },
+  broadcast : {
+    title : "Push tx",
+    broadcastTx : "Broadcast transaction",
+    rawTransaction : "hex transaction",
+    send : "Send transaction",
+    success : "Transaction sent",
+    error : "An error occured",
+    invalidRawTx : "Invalid format"
+  },
+  blocks : {
+    title : "List of blocks",
+    loadMore : "Load more",
+    notFound : "Not found"
+  },
   error : {
     notFound : "Not found"
   }

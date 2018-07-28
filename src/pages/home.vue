@@ -6,13 +6,13 @@
   </div>
   
   <div class="mb-4 col-12">
-    <table class="table realtime-block-table">
+    <table class="table block-list-table">
       <thead>
         <tr><th>{{ $t("word.blockHeight") }}</th><th>{{ $t("word.age") }}</th><th>{{ $t("word.transactionCount") }}</th><th>{{ $t("block.minedBy") }}</th><th>{{ $t("word.size") }}</th></tr>
       </thead>
       <tbody>
         <tr v-if="!blocks.length">
-          <td colspan="4">{{ $t("home.waitingBlock") }}</td>
+          <td colspan="5">{{ $t("home.waitingBlock") }}</td>
         </tr>
         <tr v-for="(block, i) in blocks">
           <td><router-link :to="`/block/${block.hash}`">{{block.height}}</router-link></td>

@@ -154,7 +154,7 @@ export default {
         return;
       }
       
-      this.tx = res;  
+      this.tx = res;  console.log(this.tx);
       this.loaded = true;
     },
     handleMessage(msg){

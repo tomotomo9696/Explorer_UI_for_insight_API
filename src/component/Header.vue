@@ -7,10 +7,13 @@
    
     <div class="navbar-collapse collapse" id="navbar">
       <ul class="navbar-nav mr-auto">
-        <!--li class="nav-item">
-          <a class="nav-link" href="#">{{ $t('word.block') }}</a>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/blocks">{{ $t('blocks.title') }}</router-link>
         </li>
         <li class="nav-item">
+          <router-link class="nav-link" to="/broadcast">{{ $t('broadcast.title') }}</router-link>
+        </li>
+        <!--li class="nav-item">
           <a class="nav-link" href="#">{{ $t('word.status') }}</a>
         </li-->
         <li class="nav-item dropdown">

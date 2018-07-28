@@ -51,6 +51,20 @@ module.exports = {
     totalSent : "合計送金額",
     finalBalance : "最終的な残高"
   },
+  broadcast : {
+    title : "取引の送信",
+    broadcastTx : "トランザクションのブロードキャスト",
+    rawTransaction : "16進数のトランザクション",
+    send : "トランザクションを送信",
+    success : "送信に成功しました",
+    error : "送信に失敗しました",
+    invalidRawTx : "フォーマットが正しくありません"
+  },
+  blocks : {
+    title : "ブロックリスト",
+    loadMore : "さらに読み込む",
+    notFound : "見つかりませんでした"
+  },
   error : {
     notFound : "ページが見つかりませんでした"
   }
