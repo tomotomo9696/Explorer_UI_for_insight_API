@@ -5,10 +5,10 @@
     <div class="title">{{ $t("home.latestBlocks") }}</div>
   </div>
   
-  <div class="mb-4 col-12">
+  <div class="mb-4 col-12 table-responsive">
     <table class="table block-list-table">
       <thead>
-        <tr><th>{{ $t("word.blockHeight") }}</th><th>{{ $t("word.age") }}</th><th>{{ $t("word.transactionCount") }}</th><th>{{ $t("block.minedBy") }}</th><th>{{ $t("word.size") }}</th></tr>
+        <tr><th>{{ $t("word.blockHeight") }}</th><th>{{ $t("word.age") }}</th><th>{{ $t("word.transactionCount") }}</th><th class="d-none d-lg-table-cell">{{ $t("block.minedBy") }}</th><th>{{ $t("word.size") }}</th></tr>
       </thead>
       <tbody>
         <tr v-if="!blocks.length">
@@ -18,7 +18,7 @@
           <td><router-link :to="`/block/${block.hash}`">{{block.height}}</router-link></td>
           <td>{{ age[i] }}</td>
           <td>{{ block.txlength }}</td>
-          <td><a v-if="block.poolInfo" :href="block.poolInfo.url">{{ block.poolInfo.poolName }}</a></td>
+          <td class="d-none d-lg-table-cell"><a v-if="block.poolInfo" :href="block.poolInfo.url">{{ block.poolInfo.poolName }}</a></td>
           <td>{{ block.size }} byte</td>
         </tr>
       </tbody>
