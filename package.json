@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production",
-    "dev": "WEBPACK_SERVE=1 webpack-serve"
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack-serve --config webpack.dev.js"
   },
   "author": "",
   "license": "MIT",
@@ -27,6 +27,7 @@
     "vue-template-compiler": "^2.5.17",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
+    "webpack-merge": "^4.1.4",
     "webpack-serve": "^2.0.2"
   },
   "dependencies": {
