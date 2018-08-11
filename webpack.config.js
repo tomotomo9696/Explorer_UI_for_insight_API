@@ -1,28 +1,32 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
+const zopfli = require('node-zopfli');
 
 module.exports = {
-  // ソース
   entry: './src/index.js',
 
-  // 出力
   output: {
-    // 出力先のファイル名
     filename: 'bundle.js',
-    // 出力先のファイルパス
     path: `${__dirname}/dist`,
   },
-  // 開発サーバの設定
   devServer: {
-    // destディレクトリの中身を表示してね、という設定
     contentBase: 'dist',
     host: '0.0.0.0',
     disableHostCheck: true,
     historyApiFallback: true
   },
   plugins: [
-    new ExtractTextPlugin('style.css'),
-    new VueLoaderPlugin()
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
+    }),
+    new VueLoaderPlugin(),
+    new CompressionPlugin({
+      test: /\.(js)$/,
+      algorithm: (content, options, fn) => {
+        zopfli.gzip(content, options, fn);
+      },
+    })
   ],
   resolve: {
     extensions: ['.js', '.vue'],
@@ -30,7 +34,6 @@ module.exports = {
       "node_modules"
     ],
     alias: {
-      // vue.js のビルドを指定する
       vue: 'vue/dist/vue.esm.js'
     }
   },
@@ -42,7 +45,8 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract([
+        use: [
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -65,7 +69,7 @@ module.exports = {
               sourceMap: true,
             }
           }
-        ])
+        ]
       }
     ]
   },
