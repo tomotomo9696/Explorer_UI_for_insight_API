@@ -46,7 +46,7 @@ module.exports = {
         loader: "vue-loader",
       },
       {
-        test: /\.scss$/,
+        test   : /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -54,8 +54,8 @@ module.exports = {
             options: {
               url: false,
               sourceMap: true,
-              importLoaders: 2
-            },
+              importLoaders: 1
+            }
           },
           {
             loader: "postcss-loader",
@@ -65,15 +65,46 @@ module.exports = {
                 require("autoprefixer"),
                 require("cssnano"),
               ]
-            },
+            }
+          }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              url: false,
+              sourceMap: true,
+              importLoaders: 2
+            }
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true,
+              plugins: () => [
+                require("autoprefixer"),
+                require("cssnano"),
+              ]
+            }
           },
           {
             loader: "sass-loader",
             options: {
-              sourceMap: true,
+              sourceMap: true
             }
           }
         ]
+      },
+      {
+        test: /\.(eot|woff|woff2|ttf|svg)$/,
+        loader: "file-loader",
+        options: {
+          name: "[name].[ext]"
+        }
       }
     ]
   },
