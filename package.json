@@ -14,6 +14,7 @@
     "autoprefixer": "^9.1.0",
     "compression-webpack-plugin": "^1.1.11",
     "css-loader": "^1.0.0",
+    "cssnano": "^4.0.5",
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.3",
     "node-zopfli": "^2.0.2",

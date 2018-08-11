@@ -52,7 +52,6 @@ module.exports = {
             options: {
               url: false,
               sourceMap: true,
-              minimize: true,
               importLoaders: 2
             },
           },
@@ -60,7 +59,10 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              plugins: () => [require('autoprefixer')]
+              plugins: () => [
+                require('autoprefixer'),
+                require('cssnano'),
+              ]
             },
           },
           {
