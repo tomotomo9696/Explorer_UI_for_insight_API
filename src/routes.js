@@ -1,3 +1,4 @@
+/*
 import home from "./pages/home.vue";
 import block from "./pages/block.vue";
 import blockHeight from "./pages/block-height.vue";
@@ -6,6 +7,15 @@ import address from "./pages/address.vue";
 import blocks from "./pages/blocks.vue";
 import broadcast from "./pages/broadcast-tx.vue";
 import notfound from "./pages/notfound.vue";
+*/
+const home = () => import("./pages/home.vue");
+const block = () => import("./pages/block.vue");
+const blockHeight = () => import("./pages/block-height.vue");
+const tx = () => import("./pages/transaction.vue");
+const address = () => import("./pages/address.vue");
+const blocks = () => import("./pages/blocks.vue");
+const broadcast = () => import("./pages/broadcast-tx.vue");
+const notfound = () => import("./pages/notfound.vue");
 
 export default [
     {
