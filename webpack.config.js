@@ -1,7 +1,7 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
-const zopfli = require('node-zopfli');
+const zopfli = require('@gfx/zopfli');
 
 module.exports = {
   entry: './src/index.js',
