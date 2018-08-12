@@ -41,6 +41,7 @@ module.exports = {
     }
   },
   home : {
+    title : "ホーム",
     latestBlocks : "直近のブロック",
     latestTxs : "直近のトランザクション",
     waitingBlock : "ブロック待機中",

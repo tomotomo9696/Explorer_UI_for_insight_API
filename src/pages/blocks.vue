@@ -99,7 +99,7 @@ export default {
     async fetchData(){
       this.reset();
       this.changeLocale(this.$i18n.locale);
-      this.$root.setTitle("Blocks", this.$route.params.blockid);
+      this.$root.setTitle(this.$t("blocks.title"), this.$route.params.blockid);
 
       let date = this.$route.params.date;
       let today = moment();

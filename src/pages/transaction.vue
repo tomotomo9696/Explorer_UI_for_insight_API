@@ -140,7 +140,7 @@ export default {
   methods: {
     async fetchData(){
       this.reset();
-      this.$root.setTitle("Transaction", this.$route.params.txid);
+      this.$root.setTitle(this.$t("word.transaction"), this.$route.params.txid);
       
       if(!util.isHash(this.$route.params.txid)){
         this.$router.replace(`/404`);

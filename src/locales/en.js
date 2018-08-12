@@ -41,6 +41,7 @@ module.exports = {
     }
   },
   home : {
+    title : "Home",
     latestBlocks : "Latest blocks",
     latestTxs : "Latest transactions",
     waitingBlock : "Waiting blovk",

@@ -48,6 +48,9 @@ export default {
       ready : true
     }
   },
+  created(){
+    this.$root.setTitle(this.$t("broadcast.title"));
+  },
   methods: {
     async broadcast(){
       if(!this.ready)

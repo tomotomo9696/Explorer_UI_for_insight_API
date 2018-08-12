@@ -14,7 +14,7 @@ export default {
     }
   },
   created(){
-    this.$root.setTitle("404 Not found");
+    this.$root.setTitle(this.$t("error.notFound"));
   }
 }
 </script>

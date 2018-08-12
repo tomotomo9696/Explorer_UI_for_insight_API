@@ -103,7 +103,7 @@ export default {
   methods: {
     async fetchData(){
       this.reset();
-      this.$root.setTitle("Block", this.$route.params.blockid);
+      this.$root.setTitle(this.$t("word.block"), this.$route.params.blockid);
         
       if(!util.isHash(this.$route.params.blockid)){
         this.$router.replace(`/404`);
