@@ -2,6 +2,9 @@
 
 @import "~bootstrap/scss/bootstrap.scss";
 
+body {
+  padding-top: 5rem;
+}
 
 .tx-box{
   background-color: $block-background-color;
@@ -152,4 +155,5 @@ hr{
 @import "./loading.scss";
 @import "./script.scss";
 @import "./datepicker_custom.scss";
+@import "~material-design-icons/iconfont/material-icons.css";
 

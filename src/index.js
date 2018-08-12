@@ -1,6 +1,5 @@
 import 'bootstrap';
 import './scss/index.scss';
-import 'material-design-icons/iconfont/material-icons.css';
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';

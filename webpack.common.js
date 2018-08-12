@@ -7,8 +7,9 @@ module.exports = {
 
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
-    publicPath: "/"
+    chunkFilename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist/build"),
+    publicPath: "/build/"
   },
   resolve: {
     extensions: [".js", ".vue"],
@@ -26,35 +27,12 @@ module.exports = {
         loader: "vue-loader",
       },
       {
-        test   : /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: {
-              url: false,
-              importLoaders: 1
-            }
-          },
-          {
-            loader: "postcss-loader",
-            options: {
-              plugins: () => [
-                require("autoprefixer"),
-                require("cssnano"),
-              ]
-            }
-          }
-        ]
-      },
-      {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
-              url: false,
               importLoaders: 2
             }
           },

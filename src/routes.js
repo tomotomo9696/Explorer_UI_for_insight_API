@@ -8,14 +8,14 @@ import blocks from "./pages/blocks.vue";
 import broadcast from "./pages/broadcast-tx.vue";
 import notfound from "./pages/notfound.vue";
 */
-const home = () => import("./pages/home.vue");
-const block = () => import("./pages/block.vue");
-const blockHeight = () => import("./pages/block-height.vue");
-const tx = () => import("./pages/transaction.vue");
-const address = () => import("./pages/address.vue");
-const blocks = () => import("./pages/blocks.vue");
-const broadcast = () => import("./pages/broadcast-tx.vue");
-const notfound = () => import("./pages/notfound.vue");
+const home        = () => import(/* webpackChunkName: "home" */ "./pages/home.vue");
+const block       = () => import(/* webpackChunkName: "block" */ "./pages/block.vue");
+const blockHeight = () => import(/* webpackChunkName: "height" */ "./pages/block-height.vue");
+const tx          = () => import(/* webpackChunkName: "tx" */ "./pages/transaction.vue");
+const address     = () => import(/* webpackChunkName: "address" */ "./pages/address.vue");
+const blocks      = () => import(/* webpackChunkName: "blocks" */ "./pages/blocks.vue");
+const broadcast   = () => import(/* webpackChunkName: "broadcast" */ "./pages/broadcast-tx.vue");
+const notfound    = () => import(/* webpackChunkName: "notfound" */ "./pages/notfound.vue");
 
 export default [
     {
