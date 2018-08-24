@@ -68,5 +68,15 @@ module.exports = {
   },
   error : {
     notFound : "Not found"
+  },
+  saveAddress : {
+    openButton : "Saved addresses",
+    modalTitle : "Saved addresses",
+    description : "You can save your address. You can check it immediately.",
+    notFound : "There is no saved address.",
+    placeholder : "Address to save",
+    save : "Save",
+    delete : "Delete selected",
+    confirm : "Delete the following address(es) from this list. Are you sure?"
   }
 }

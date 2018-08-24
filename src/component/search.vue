@@ -1,7 +1,7 @@
 <template>
   <div class="col-12 col-lg-4 px-0">
     <div class="input-group col-12 px-0">
-      <div class="input-group-prepend">
+      <div class="input-group-prepend ">
         <span class="input-group-text"><i class="material-icons md-default">search</i></span>
       </div>
       <input class="form-control" type="search" :placeholder="$t('header.search.placeholder')" @keyup.enter="search" v-model="searchString">

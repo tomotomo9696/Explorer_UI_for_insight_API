@@ -68,5 +68,15 @@ module.exports = {
   },
   error : {
     notFound : "ページが見つかりませんでした"
+  },
+  saveAddress : {
+    openButton : "保存したアドレス",
+    modalTitle : "保存したアドレス",
+    description : "よく使うアドレスを保存して、すぐ確認することができます。",
+    notFound : "アドレスが保存されていません。",
+    placeholder : "保存するアドレス",
+    save : "保存",
+    delete : "選択したものを削除",
+    confirm : "以下のアドレスをこの一覧から削除します。よろしいですか？"
   }
 }

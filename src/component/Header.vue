@@ -8,16 +8,16 @@
     <div class="navbar-collapse collapse" id="navbar">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link class="nav-link" to="/blocks">{{ $t('blocks.title') }}</router-link>
+          <router-link class="nav-link" to="/blocks" @click.native="blur">{{ $t('blocks.title') }}</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/broadcast">{{ $t('broadcast.title') }}</router-link>
+          <router-link class="nav-link" to="/broadcast" @click.native="blur">{{ $t('broadcast.title') }}</router-link>
         </li>
         <!--li class="nav-item">
           <a class="nav-link" href="#">{{ $t('word.status') }}</a>
         </li-->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="selectLang" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="selectLang" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @click="blur">
             Language  
           </a>
           <div class="dropdown-menu" aria-labelledby="selectLang">
@@ -26,23 +26,37 @@
           </div>
         </li>
       </ul>
-      <header-status class="d-none d-lg-block"></header-status>
+      <save-address></save-address>
+      <header-status class="d-none d-xl-block"></header-status>
       <header-search></header-search>
     </div>
   </nav>
 </template>
 
+<style lang="scss" scoped>
+#selectLang{
+  outline-color : transparent;
+}
+</style>
+
 <script>
 import Search from './search.vue';
 import Status from './headerStatus.vue';
+import SaveAddr from './saveAddress.vue';
 
 export default {
   data: () => {
     return {}
   },
+  methods : {
+    blur(e){
+      e.target.blur();
+    }
+  },
   components: {
     'header-search': Search,
-    'header-status': Status
+    'header-status': Status,
+    'save-address': SaveAddr
   }
 }
 </script>

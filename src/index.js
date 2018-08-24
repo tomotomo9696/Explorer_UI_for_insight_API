@@ -7,6 +7,7 @@ import VueI18n from 'vue-i18n';
 import VueCookie from 'vue-cookie';
 
 import Header from './component/Header.vue';
+import SaveAddrModal from './component/saveAddressModal.vue';
 
 import langs from './languages';
 
@@ -54,6 +55,7 @@ Vue.directive('title', {
 });
 
 Vue.component("app-header", Header);
+Vue.component("save-address-modal", SaveAddrModal);
 
 new Vue({
   el: '#app',
