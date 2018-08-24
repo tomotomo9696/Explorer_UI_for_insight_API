@@ -22,8 +22,6 @@ const saveAddr = new Vue({
 
       if(!util.addressType(addr))
         return false;
-        
-      console.log(this.list.indexOf(addr) );
 
       if(this.list.indexOf(addr) !== -1)
         return false;

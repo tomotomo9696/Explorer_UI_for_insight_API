@@ -157,10 +157,6 @@ hr{
   opacity: 0;
 }
 
-.header-active{
-  background: $gray-800;
-}
-
 @import "./loading.scss";
 @import "./script.scss";
 @import "./datepicker_custom.scss";
