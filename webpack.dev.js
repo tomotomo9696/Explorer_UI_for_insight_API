@@ -24,22 +24,10 @@ module.exports = merge(common, {
       filename: "style.css",
     })  
   ],
-  serve: {
-    content: path.resolve(__dirname, "dist"),
-    port: 8081,
-    host: "0.0.0.0",
-    devMiddleware: {
-      publicPath: "/build/"
-    },
-    hotClient: {
-      host: {
-        server: "0.0.0.0",
-        client: "*"
-      },
-      port: 8082
-    },
-    add: (app, middleware, options) => {
-      app.use(convert(history({ index: "/" })));
-    }
+  devServer: {
+    contentBase: "dist",
+    host: '0.0.0.0',
+    disableHostCheck: true,
+    historyApiFallback: true
   }
 });
