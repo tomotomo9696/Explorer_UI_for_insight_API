@@ -16,7 +16,9 @@
       </header>
       
       <main role="main" class="container">
-        <router-view v-title="title"></router-view>
+        <transition name="fade" mode="out-in">
+          <router-view v-title="title"></router-view>
+        </transition>
       </main>
       <save-address-modal></save-address-modal>
     </div>
