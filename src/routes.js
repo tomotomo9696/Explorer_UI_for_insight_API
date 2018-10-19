@@ -16,6 +16,7 @@ const address     = () => import(/* webpackChunkName: "address" */ "./pages/addr
 const blocks      = () => import(/* webpackChunkName: "blocks" */ "./pages/blocks.vue");
 const broadcast   = () => import(/* webpackChunkName: "broadcast" */ "./pages/broadcast-tx.vue");
 const notfound    = () => import(/* webpackChunkName: "notfound" */ "./pages/notfound.vue");
+const scanqr    = () => import(/* webpackChunkName: "scanqr" */ "./pages/scanQRCode.vue");
 
 export default [
     {
@@ -50,6 +51,10 @@ export default [
     {
         path : '/broadcast',
         component : broadcast,
+    },
+    {
+        path : '/scanqr',
+        component : scanqr,
     },
     {
       path: '/404',

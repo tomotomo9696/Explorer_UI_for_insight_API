@@ -78,5 +78,15 @@ module.exports = {
     save : "Save",
     delete : "Delete selected",
     confirm : "Delete the following address(es) from this list. Are you sure?"
+  },
+  scanqr : {
+    title : "Scan QR code",
+    description : "You can jump to the address page by scanning the QR code.",
+    notAllowed : "Access to the camera has been denied.",
+    deviceNotFound : "Camera could not be found.",
+    notSupported : "Camera can not be used due to security restrictions.",
+    notReadable : "Can not be used because the camera is in use.",
+    error : "Camera can not be used. Browser may not support.",
+    addressNotFound : "No address was found in the QR code."
   }
 }

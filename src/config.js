@@ -5,6 +5,7 @@ export default {
   socket : "https://zenyinsight.tomotomo9696.xyz/",
   
   currencyName : "Bitzeny",
+  scheme : "bitzeny",
   currencySymbol : "ZNY",
   
   

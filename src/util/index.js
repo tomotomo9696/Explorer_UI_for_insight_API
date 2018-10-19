@@ -1,5 +1,6 @@
-import CONFIG from '../config';
-import BigNumber from 'bignumber.js';
+import CONFIG from "../config";
+import BigNumber from "bignumber.js";
+import qs from "qs";
 
 export default {
   isHash(data){
@@ -18,6 +19,21 @@ export default {
       return "BECH32";
       
     return false;
+  },
+  parseBitcoinUri(uri){
+    const scheme = CONFIG.scheme || "bitcoin";
+    if(uri.indexOf(scheme) !== 0 || uri.charAt(scheme.length) !== ":")
+      return false;
+      
+    const g = /[^:]*:\/?\/?([^?]*)/.exec(uri);
+    const address = g && g[1];
+    if(!this.addressType(address))
+      return false;
+    
+    const query = uri.split("?")[1] || "";
+    const params = qs.parse(query);
+
+    return { address: address, params: params };
   },
   valueConvertion(value) {
     return new BigNumber(value).toString(10) + ` ${CONFIG.currencySymbol}`;

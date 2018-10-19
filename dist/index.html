@@ -17,7 +17,7 @@
       
       <main role="main" class="container">
         <transition name="fade" mode="out-in">
-          <router-view v-title="title"></router-view>
+          <router-view v-title="title" :key="$route.fullPath"></router-view>
         </transition>
       </main>
       <save-address-modal></save-address-modal>

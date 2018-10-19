@@ -36,6 +36,7 @@ module.exports = {
     hideScript: "スクリプトを非表示"
   },
   header : {
+    tools : "ツール",
     search : {
       placeholder : "アドレス、ハッシュ、ブロック高"
     }
@@ -78,5 +79,15 @@ module.exports = {
     save : "保存",
     delete : "選択したものを削除",
     confirm : "以下のアドレスをこの一覧から削除します。よろしいですか？"
+  },
+  scanqr : {
+    title : "QRコードスキャン",
+    description : "QRコードをスキャンして、そのアドレスのページに移動できます。",
+    notAllowed : "カメラの使用が拒否されました。スキャン機能を利用したい場合は手動で許可してください。",
+    deviceNotFound : "カメラデバイスが見つかりませんでした。",
+    notSupported : "セキュリティ上の制約でカメラを使用することができません。",
+    notReadable : "カメラが使用中のため使用できません。",
+    error : "カメラが使用できません。ブラウザが対応していない可能性があります。",
+    addressNotFound : "QRコードにアドレスが見つかりませんでした。"
   }
 }

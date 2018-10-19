@@ -10,12 +10,18 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/blocks" @click.native="blur">{{ $t('blocks.title') }}</router-link>
         </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="/broadcast" @click.native="blur">{{ $t('broadcast.title') }}</router-link>
-        </li>
         <!--li class="nav-item">
           <a class="nav-link" href="#">{{ $t('word.status') }}</a>
         </li-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="tools" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @click="blur">
+            {{ $t("header.tools") }}  
+          </a>
+          <div class="dropdown-menu" aria-labelledby="tools">
+            <router-link class="btn btn-link dropdown-item" to="/broadcast" @click.native="blur">{{ $t('broadcast.title') }}</router-link>
+            <router-link class="btn btn-link dropdown-item" to="/scanqr" @click.native="blur">{{ $t('scanqr.title') }}</router-link>
+          </div>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="selectLang" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @click="blur">
             Language  

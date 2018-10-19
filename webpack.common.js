@@ -51,6 +51,27 @@ module.exports = {
         ]
       },
       {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1
+            }
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              plugins: () => [
+                require("autoprefixer"),
+                require("cssnano"),
+              ]
+            }
+          }
+        ]
+      },
+      {
         test: /\.(eot|woff|woff2|ttf|svg)$/,
         loader: "file-loader",
         options: {
