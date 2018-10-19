@@ -36,6 +36,7 @@ module.exports = {
     hideScript: "Hide script"
   },
   header : {
+    tools : "Tools",
     search : {
       placeholder : "Address、Hash、Height"
     }
