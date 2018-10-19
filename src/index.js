@@ -70,11 +70,6 @@ new Vue({
     let lang = cookieLang || browserLang;
     this.changeLocale(lang);
   },
-  watch: {
-    "$route" (to, from) {
-      this.transitionName = "fade";
-    }
-  },
   methods : {
     setTitle(page, data){
       data = data ? ` ${data}` : "";
