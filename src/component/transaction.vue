@@ -13,7 +13,7 @@
     <div class="col-lg-5">
       <div class="text-center">{{ $tc("tx.inputs", tx.isCoinBase ? 0 : tx.vin.length, {count : tx.vin.length}) }}</div>
       <div v-for="vin in vin.slice(0, vinShowAll ? vin.length : 5)" class="panel-address">
-        <div>
+        <div class="text-truncate">
           <span v-if="vin.addr === currentAddr">{{vin.addr}}</span>
           <router-link :to="`/address/${vin.addr}`" v-else-if="vin.addr">{{vin.addr}}</router-link>
         </div>
@@ -34,7 +34,7 @@
       <div class="text-center">{{ $tc("tx.outputs", tx.vout.length, {count : tx.vout.length}) }}</div>
       <div v-for="vout in vout.slice(0, voutShowAll ? vout.length : 5)">
         <div class="panel-address">
-          <div v-for="addr in vout.scriptPubKey.addresses" :key="addr">
+          <div v-for="addr in vout.scriptPubKey.addresses" :key="addr" class="text-truncate">
             <span v-if="addr === currentAddr">{{addr}}</span>
             <router-link :to="`/address/${addr}`" v-else>{{addr}}</router-link>
           </div>

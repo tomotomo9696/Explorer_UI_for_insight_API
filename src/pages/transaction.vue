@@ -62,7 +62,7 @@
   <div class="col-12">
     <transaction :tx="tx" :is-list="false"></transaction>
   </div>
-  <div class="col-12 text-center">
+  <div class="col-12 text-center mb-3">
     <button class="btn btn-primary" type="button" @click="showScript = !showScript">
       <span v-if="!showScript">{{ $t("tx.showScript") }}</span>
       <span v-if="showScript">{{ $t("tx.hideScript") }}</span>
