@@ -17,7 +17,14 @@ module.exports = {
   block : {
     minedBy : "採掘者",
     blockReward : "ブロック報酬",
-    minedTime : "採掘日時"
+    minedTime : "採掘日時",
+    merkleRoot : "マークルルート",
+    segwitCommitment : "Segwit コミットメント",
+    version : "バージョン",
+    difficulty : "難易度",
+    bits : "Bits",
+    nonce : "Nonce",
+    advancedDetails : "詳細情報"
   },
   tx : {
     receivedTime : "受信日時",

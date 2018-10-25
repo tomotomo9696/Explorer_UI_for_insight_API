@@ -17,7 +17,14 @@ module.exports = {
   block : {
     minedBy : "Mined by",
     blockReward : "Block reward",
-    minedTime : "Mined time"
+    minedTime : "Mined time",
+    merkleRoot : "Merkle root",
+    segwitCommitment : "Segwit commitment",
+    version : "Version",
+    difficulty : "Difficulty",
+    bits : "Bits",
+    nonce : "Nonce",
+    advancedDetails : "Advanced details"
   },
   tx : {
     receivedTime : "Received time",

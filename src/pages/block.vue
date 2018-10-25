@@ -35,6 +35,45 @@
         </tr>
       </tbody>
     </table>
+    
+    <div class="text-center mb-2">
+      <button type="button" class="btn btn-primary"data-toggle="collapse" data-target="#advancedDetails" aria-expanded="false" aria-controls="advancedDetails">
+        {{ $t("block.advancedDetails") }}
+      </button>
+    </div>
+
+    <div class="collapse" id="advancedDetails">
+      <table class="table summary-table">
+        <tbody>
+          <tr>
+            <th scope="row">{{ $t("block.merkleRoot") }}</th>
+            <td>{{ block.merkleroot }}</td>
+          </tr>
+          <tr v-if="block.segwitCommitment">
+            <th scope="row">{{ $t("block.segwitCommitment") }}</th>
+            <td>{{ block.segwitCommitment }}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{ $t("block.version") }}</th>
+            <td>{{ block.version }}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{ $t("block.difficulty") }}</th>
+            <td>{{ block.difficulty }}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{ $t("block.bits") }}</th>
+            <td>{{ block.bits }}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{ $t("block.nonce") }}</th>
+            <td>{{ block.nonce }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col-12">
     <div class="row">
       <div class="col-6 text-left">
         <router-link v-if="block.previousblockhash" :to="`/block/${block.previousblockhash}`" tag="button" type="button" class="btn btn-outline-primary">
@@ -63,6 +102,7 @@
 </div>
 
 </template>
+
 
 <script>
 import CONFIG from "../config";
