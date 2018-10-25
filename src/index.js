@@ -5,6 +5,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
 import VueCookie from 'vue-cookie';
+import VueLocalStorage from "vue-localstorage";
 
 import Header from './component/Header.vue';
 import SaveAddrModal from './component/saveAddressModal.vue';
@@ -16,6 +17,7 @@ import CONFIG from './config';
 import moment from "moment";
 
 Vue.use(VueCookie);
+Vue.use(VueLocalStorage);
 
 //language
 const browserLang = (window.navigator.languages && window.navigator.languages[0]) || window.navigator.language || window.navigator.userLanguage || window.navigator.browserLanguage || "en";

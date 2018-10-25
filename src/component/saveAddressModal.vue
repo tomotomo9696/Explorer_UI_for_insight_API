@@ -72,7 +72,7 @@
 </style>
 
 <script>
-import saveAddr from "../saveAddress";
+import util from "../util";
 
 export default {
   data(){
@@ -97,31 +97,38 @@ export default {
       }
     }
   },
+  watch: {
+    list(){
+      this.$localStorage.set("addressList", this.list.join(","));
+    }
+  },
   methods: {
     get(){
-      this.list = saveAddr.get();
+      this.list = this.$localStorage.get("addressList", "").split(",").filter(x => util.addressType(x));
     },
     add(){
-      if(saveAddr.add(this.address))
-        this.list = saveAddr.get();
-        
+      if(!util.addressType(this.address))
+        return false;
+
+      if(this.list.indexOf(this.address) !== -1)
+        return false;
+      
+      this.list.push(this.address);
       this.address = "";
     },
     deleteAddress(){
       if(!window.confirm(`${this.$t("saveAddress.confirm")}\n\n${this.selected.join("\n")}`))
         return false;
 
-      for(let addr of this.selected)
-        saveAddr.delete(addr);
+      this.list = this.list.filter(x => this.selected.indexOf(x) === -1);
         
-      this.selected = [];        
-      this.get();
+      this.selected = [];
     },
     onModalOpen(){
       this.get();
     },
     onLinkClick(){
-      $("#saveAddressModal").modal("hide")
+      $("#saveAddressModal").modal("hide");
     },
     onCheckBoxClick(e){
       $(e.target).children('input[type="checkbox"]').trigger("click");
