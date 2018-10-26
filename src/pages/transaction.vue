@@ -14,7 +14,7 @@
       <div class="col-lg-6 mb-4 mb-lg-0">
         <div class="big-text" :class="confirmationsColor">{{ $tc("tx.confirmations", confirmations, {confirmations : confirmations} ) }}</div>
         
-        <table class="sum-table w-100">
+        <table class="tx-summary-table w-100">
           <tbody>
             <tr>
               <th scope="row">{{ $t("tx.receivedTime") }}</th>
@@ -40,7 +40,7 @@
       <div class="col-lg-6 text-lg-right clearfix">
         <div class="big-text">{{ $t("tx.valueOut") }} <span class="bold-number">{{ valueConvertion(tx.valueOut) }}</span></div>
         
-        <table class="sum-table w-100 float-lg-right" v-if="!tx.isCoinBase">
+        <table class="tx-summary-table w-100 float-lg-right" v-if="!tx.isCoinBase">
           <tbody>
             <tr>
               <th scope="row">{{ $t("tx.fee") }}</th>
@@ -111,8 +111,6 @@ import OP from "../util/opcode";
 
 import moment from "moment";
 import BigNumber from 'bignumber.js';
-
-
 
 
 export default {

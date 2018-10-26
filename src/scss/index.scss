@@ -38,25 +38,25 @@ body {
 .summary-table{
   table-layout: fixed;
 }
+.summary-table th{
+  width: calc(100% / 3);
+}
 .summary-table td{
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   text-align: right;
-  width: calc(100% - 10em);
 }
 
-
-.sum-table th{
+.tx-summary-table th{
   text-align: left;
 }
-.sum-table td{
+.tx-summary-table td{
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   text-align: right;
 }
-
 
 .realtime-tx-table{
   table-layout: fixed;
@@ -93,8 +93,6 @@ body {
 .block-list-table th:nth-child(5) {
   text-align: right;
 }
-
-
 
 .title{
   font-size: 28px;

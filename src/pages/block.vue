@@ -103,7 +103,6 @@
 
 </template>
 
-
 <script>
 import CONFIG from "../config";
 
