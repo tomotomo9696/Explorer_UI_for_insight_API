@@ -132,8 +132,11 @@ hr{
   border-radius: .25rem;
 }
 
+.material-icons {
+  user-select: none;
+}
 .material-icons.md-default {
-  font-size: ($font-size-base * 1.5);
+  font-size: $font-size-base-icon;
   line-height: 1;
 }
 
@@ -154,6 +157,26 @@ hr{
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
+
+.copy-button {
+  cursor: pointer;
+}
+
+.copy-button-container {
+  display: flex;
+}
+.copy-button-item-data {
+  max-width: calc(100% - #{$font-size-base-icon});
+  flex-basis: auto;
+  flex-grow: 0;
+}
+.copy-button-item-button {
+  min-width: $font-size-base-icon;
+  flex-basis: $font-size-base-icon;
+  margin-left: 0.5em;
+  flex-grow: 1;
+}
+
 
 @import "./loading.scss";
 @import "./script.scss";

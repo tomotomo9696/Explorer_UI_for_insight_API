@@ -6,7 +6,14 @@
 <div class="row" v-if="loaded">
   <div class="mb-4 col-12">
     <div><span class="title">{{ $t("word.block") }}</span><span class="ml-2">{{ block.height }}</span></div>
-    <div class="text-muted text-truncate">{{block.hash}}</div>
+    <div class="copy-button-container text-muted">
+      <div class="copy-button-item-data text-truncate">
+        {{block.hash}}
+      </div>
+      <div class="copy-button-item-button">
+        <i class="material-icons md-default align-top copy-button" v-clipboard:copy="block.hash">content_copy</i>
+      </div>
+    </div>
   </div>
   
   <div class="col-12">

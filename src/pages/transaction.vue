@@ -6,7 +6,14 @@
 <div class="row" v-if="loaded">
   <div class="mb-4 col-12">
     <div class="title">{{ $t("word.transaction") }}</div>
-    <div class="text-muted text-truncate">{{tx.txid}}</div>
+    <div class="copy-button-container text-muted">
+      <div class="copy-button-item-data text-truncate">
+        {{tx.txid}}
+      </div>
+      <div class="copy-button-item-button">
+        <i class="material-icons md-default align-top copy-button" v-clipboard:copy="tx.txid">content_copy</i>
+      </div>
+    </div>
   </div>
   
   <div class="col-12">

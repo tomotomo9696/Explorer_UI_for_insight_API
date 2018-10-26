@@ -3,7 +3,14 @@
 <div class="tx-box">
   <div class="row" v-if="isList">
     <div class="col-12">
-      <div class="text-truncate"><router-link :to="`/tx/${tx.txid}`">{{tx.txid}}</router-link></div>
+      <div class="copy-button-container">
+        <div class="copy-button-item-data text-truncate">
+          <router-link :to="`/tx/${tx.txid}`">{{tx.txid}}</router-link>
+        </div>
+        <div class="copy-button-item-button">
+          <i class="material-icons md-default align-top copy-button" v-clipboard:copy="tx.txid">content_copy</i>
+        </div>
+      </div>
     </div>
   </div>
   
@@ -38,7 +45,7 @@
             <span v-if="addr === currentAddr">{{addr}}</span>
             <router-link :to="`/address/${addr}`" v-else>{{addr}}</router-link>
           </div>
-          <div v-if="vout.scriptPubKey.message"><i class="material-icons align-middle">chat</i><span>{{vout.scriptPubKey.message}}</span></div>
+          <div v-if="vout.scriptPubKey.message"><i class="material-icons align-top">chat</i> <span>{{vout.scriptPubKey.message}}</span></div>
           <div class="text-right" v-if="!vout.scriptPubKey.message">{{ valueConvertion(vout.value) }}</div>
         </div>
       </div>
