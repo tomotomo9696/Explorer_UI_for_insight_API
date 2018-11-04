@@ -7,6 +7,7 @@ import VueI18n from 'vue-i18n';
 import VueCookie from 'vue-cookie';
 import VueLocalStorage from "vue-localstorage";
 import VueClipboard from "vue-clipboard2";
+import VTooltip from "v-tooltip";
 
 import Header from './component/Header.vue';
 import SaveAddrModal from './component/saveAddressModal.vue';
@@ -20,6 +21,7 @@ import moment from "moment";
 Vue.use(VueCookie);
 Vue.use(VueLocalStorage);
 Vue.use(VueClipboard);
+Vue.use(VTooltip);
 
 //language
 const browserLang = (window.navigator.languages && window.navigator.languages[0]) || window.navigator.language || window.navigator.userLanguage || window.navigator.browserLanguage || "en";

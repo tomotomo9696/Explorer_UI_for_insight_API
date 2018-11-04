@@ -45,7 +45,8 @@ module.exports = {
   header : {
     tools : "Tools",
     search : {
-      placeholder : "Address、Hash、Height"
+      placeholder : "Address、Hash、Height",
+      notFound : "Not found."
     }
   },
   home : {

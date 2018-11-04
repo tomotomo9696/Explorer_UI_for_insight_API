@@ -42,6 +42,7 @@
     "popper.js": "^1.14.4",
     "qs": "^6.5.2",
     "socket.io-client": "^2.1.1",
+    "v-tooltip": "^2.0.0-rc.33",
     "vue": "^2.5.17",
     "vue-clipboard2": "^0.2.1",
     "vue-cookie": "^1.1.4",

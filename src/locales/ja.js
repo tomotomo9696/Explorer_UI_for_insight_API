@@ -45,7 +45,8 @@ module.exports = {
   header : {
     tools : "ツール",
     search : {
-      placeholder : "アドレス、ハッシュ、ブロック高"
+      placeholder : "アドレス、ハッシュ、ブロック高",
+      notFound : "見つかりませんでした。"
     }
   },
   home : {

@@ -4,7 +4,12 @@
       <div class="input-group-prepend">
         <span class="input-group-text"><i class="material-icons md-default">search</i></span>
       </div>
-      <input class="form-control" type="search" :placeholder="$t('header.search.placeholder')" @keyup.enter="search" v-model="searchString">
+      <input class="form-control" type="search" :placeholder="$t('header.search.placeholder')" @keyup.enter="search" v-model="searchString" v-tooltip="{
+        content : $t('header.search.notFound'),
+        show : showTooltip,
+        trigger : 'manual',
+        delay : {show : 0, hide : 1500}
+      }">
     </div>
   </div>
 </template>
@@ -19,11 +24,15 @@ import request from "../request";
 export default {
   data(){
     return {
-      searchString : ""
+      searchString : "",
+      showTooltip : false,
+      timeoutID : 0
     }
   },
   methods: {
     async search(){
+      clearTimeout(this.timeoutID);
+
       let ss = this.searchString.trim();
       if(!ss)
         return;
@@ -61,10 +70,18 @@ export default {
         result = v;
         break;
       }
-      console.log(result, ss);
+ 
+      console.log("call");
+      this.searchString = "";
+
       if(result){
-        this.searchString = "";
+        this.showTooltip = false;
         this.$router.push({ path : `/${result}/${ss}` });
+      }else{
+        this.showTooltip = true;
+        this.timeoutID = setTimeout(() => {
+          this.showTooltip = false;
+        }, 2000)
       }
     }
   }
