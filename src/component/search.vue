@@ -71,7 +71,6 @@ export default {
         break;
       }
  
-      console.log("call");
       this.searchString = "";
 
       if(result){

@@ -14,6 +14,7 @@ const blockHeight = () => import(/* webpackChunkName: "height" */ "./pages/block
 const tx          = () => import(/* webpackChunkName: "tx" */ "./pages/transaction.vue");
 const address     = () => import(/* webpackChunkName: "address" */ "./pages/address.vue");
 const blocks      = () => import(/* webpackChunkName: "blocks" */ "./pages/blocks.vue");
+const status    = () => import(/* webpackChunkName: "status" */ "./pages/status.vue");
 const broadcast   = () => import(/* webpackChunkName: "broadcast" */ "./pages/broadcast-tx.vue");
 const notfound    = () => import(/* webpackChunkName: "notfound" */ "./pages/notfound.vue");
 const scanqr    = () => import(/* webpackChunkName: "scanqr" */ "./pages/scanQRCode.vue");
@@ -47,6 +48,10 @@ export default [
     {
         path : '/blocks/:date?',
         component : blocks
+    },
+    {
+        path : '/status',
+        component : status
     },
     {
         path : '/broadcast',

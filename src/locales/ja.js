@@ -97,5 +97,27 @@ module.exports = {
     notReadable : "カメラが使用中のため使用できません。",
     error : "カメラが使用できません。ブラウザが対応していない可能性があります。",
     addressNotFound : "QRコードにアドレスが見つかりませんでした。"
+  },
+  status : {
+    title : "ステータス",
+    status : "ステータス",
+    syncStatus : "同期ステータス",
+    syncProgress : "同期の進捗",
+    startTime : "同期開始時刻",
+    endTime : "同期終了時刻",
+    startBlock : "開始時のブロック高",
+    lastBlock : "最新のブロック",
+    lastBlockCoind : "最新のブロック (coind)",
+    lastBlockInsight : "チェーンの先頭 (insight)",
+    nodeStatus : "ノードステータス",
+    version : "バージョン",
+    protocolVersion : "プロトコルバージョン",
+    blocks : "ブロック",
+    timeOffset : "時間のずれ",
+    connections : "他ノードへの接続数",
+    difficulty : "採掘難易度",
+    network : "ネットワーク",
+    proxy : "プロキシ",
+    infoErrors : "エラー情報"
   }
 }

@@ -10,6 +10,9 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/blocks" @click.native="blur">{{ $t('blocks.title') }}</router-link>
         </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/status" @click.native="blur">{{ $t('status.title') }}</router-link>
+        </li>
         <!--li class="nav-item">
           <a class="nav-link" href="#">{{ $t('word.status') }}</a>
         </li-->

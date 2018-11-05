@@ -45,7 +45,7 @@ module.exports = {
   header : {
     tools : "Tools",
     search : {
-      placeholder : "Address、Hash、Height",
+      placeholder : "Address, Hash, Height",
       notFound : "Not found."
     }
   },
@@ -97,5 +97,27 @@ module.exports = {
     notReadable : "Can not be used because the camera is in use.",
     error : "Camera can not be used. Browser may not support.",
     addressNotFound : "No address was found in the QR code."
+  },
+  status : {
+    title : "Status",
+    status : "Status",
+    syncStatus : "Sync status",
+    syncProgress : "Sync progress",
+    startTime : "Start date",
+    endTime : "Finish date",
+    startBlock : "Sync start block height",
+    lastBlock : "Last block",
+    lastBlockCoind : "Last block (coind)",
+    lastBlockInsight : "Current chain tip (insight)",
+    nodeStatus : "Node status",
+    version : "Version",
+    protocolVersion : "Protocol version",
+    blocks : "Blocks",
+    timeOffset : "Time offset",
+    connections : "Connections to other nodes",
+    difficulty : "Mining difficulty",
+    network : "Network",
+    proxy : "Proxy",
+    infoErrors : "Info errors"    
   }
 }
