@@ -53,7 +53,7 @@ module.exports = {
     title : "Home",
     latestBlocks : "Latest blocks",
     latestTxs : "Latest transactions",
-    waitingBlock : "Waiting blovk",
+    waitingBlock : "Waiting block",
     waitingTx : "Waiting transaction"
   },
   address : {
