@@ -75,7 +75,7 @@ export default {
   methods: {
     async fetchData(){
       this.reset();
-      this.$root.setTitle(this.$t("word.address"), this.$route.params.address);
+      this.$root.setTitle("word.address", this.$route.params.address);
       
       let addrType = util.addressType(this.$route.params.address);
 

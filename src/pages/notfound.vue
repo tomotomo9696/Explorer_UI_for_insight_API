@@ -14,7 +14,7 @@ export default {
     }
   },
   created(){
-    this.$root.setTitle(this.$t("error.notFound"));
+    this.$root.setTitle("error.notFound");
   }
 }
 </script>

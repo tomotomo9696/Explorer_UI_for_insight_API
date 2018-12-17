@@ -2,13 +2,25 @@
 
 @import "~bootstrap/scss/bootstrap.scss";
 
+$navbar-height : $nav-link-height + $nav-link-padding-y * 2;
+
 .btn-theme {
   @include button-variant($gray-800, $gray-700);
 }
 
 body {
-  padding-top: 5rem;
+  margin-top: $navbar-height;
+  height: calc(100vh - #{$navbar-height});
   background-color: #FBFBFB;
+}
+
+#app {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+#main {
+  padding-top: 1em;
 }
 
 .tx-box{
@@ -175,6 +187,16 @@ hr{
   flex-basis: $font-size-base-icon;
   margin-left: 0.5em;
   flex-grow: 1;
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background: #fff;
+}
+::-webkit-scrollbar-thumb{
+  background: $theme-color;
 }
 
 @import "./loading.scss";

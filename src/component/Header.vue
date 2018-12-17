@@ -27,7 +27,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="selectLang" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @click="blur">
-            <i class="material-icons md-default align-top">language</i> Language  
+            <i class="material-icons md-default align-top">language</i>  
           </a>
           <div class="dropdown-menu" aria-labelledby="selectLang">
             <button type="button" class="btn btn-link dropdown-item" @click.prevent="$root.changeLocale('ja')">日本語</button>

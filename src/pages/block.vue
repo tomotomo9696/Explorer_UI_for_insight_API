@@ -44,7 +44,7 @@
     </table>
     
     <div class="text-center mb-2">
-      <button type="button" class="btn btn-primary"data-toggle="collapse" data-target="#advancedDetails" aria-expanded="false" aria-controls="advancedDetails">
+      <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#advancedDetails" aria-expanded="false" aria-controls="advancedDetails">
         {{ $t("block.advancedDetails") }}
       </button>
     </div>
@@ -149,7 +149,7 @@ export default {
   methods: {
     async fetchData(){
       this.reset();
-      this.$root.setTitle(this.$t("word.block"), this.$route.params.blockid);
+      this.$root.setTitle("word.block", this.$route.params.blockid);
         
       if(!util.isHash(this.$route.params.blockid)){
         this.$router.replace(`/404`);

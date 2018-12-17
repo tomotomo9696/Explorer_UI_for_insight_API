@@ -70,14 +70,13 @@
     <transaction :tx="tx" :is-list="false"></transaction>
   </div>
   <div class="col-12 text-center mb-3">
-    <button class="btn btn-primary" type="button" @click="showScript = !showScript">
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#script" aria-expanded="false" aria-controls="script" @click="showScript = !showScript">
       <span v-if="!showScript">{{ $t("tx.showScript") }}</span>
       <span v-if="showScript">{{ $t("tx.hideScript") }}</span>
     </button>
   </div>
 
-  <transition name="fade">
-  <div class="col-12" v-if="showScript" id="script">
+  <div class="col-12 collapse" id="script">
     <div class="row">
       <div class="col-lg-6">
         <div class="text-center text-truncate lead">{{ $tc("tx.inputScript", inputScript.length) }}</div>
@@ -96,7 +95,6 @@
       </div>
     </div>
   </div>
-  </transition>
 
 </div>
 
@@ -145,7 +143,7 @@ export default {
   methods: {
     async fetchData(){
       this.reset();
-      this.$root.setTitle(this.$t("word.transaction"), this.$route.params.txid);
+      this.$root.setTitle("word.transaction", this.$route.params.txid);
       
       if(!util.isHash(this.$route.params.txid)){
         this.$router.replace(`/404`);

@@ -96,7 +96,7 @@ export default {
     Socket.$on("tx", this.onTx);
     this.$root.$on("changedLocale", this.computeAge);
 
-    this.$root.setTitle(this.$t("home.title"));
+    this.$root.setTitle("home.title");
     
     let res = await request(`/blocks?limit=5`).catch(v => false);
     if(!res)

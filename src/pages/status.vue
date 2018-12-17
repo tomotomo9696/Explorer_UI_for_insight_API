@@ -180,7 +180,7 @@ export default {
   methods: {
     async fetchData(){
       this.reset();
-      this.$root.setTitle(this.$t("status.title"));
+      this.$root.setTitle("status.title");
       
       let res = await request(`/sync`).catch(v => false);
       if(!res)

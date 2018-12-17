@@ -11,13 +11,14 @@
   </head>
   <body>
     <div id="app">
+      <vue-headful :title="title.str" :lang="lang"></vue-headful>
       <header>
         <app-header></app-header>
       </header>
       
-      <main role="main" class="container">
+      <main role="main" class="container" id="main">
         <transition name="fade" mode="out-in">
-          <router-view v-title="title" :key="$route.fullPath"></router-view>
+          <router-view :key="$route.fullPath"></router-view>
         </transition>
       </main>
       <save-address-modal></save-address-modal>

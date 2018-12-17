@@ -8,6 +8,7 @@ import VueCookie from 'vue-cookie';
 import VueLocalStorage from "vue-localstorage";
 import VueClipboard from "vue-clipboard2";
 import VTooltip from "v-tooltip";
+import VueHeadful from "vue-headful";
 
 import Header from './component/Header.vue';
 import SaveAddrModal from './component/saveAddressModal.vue';
@@ -55,11 +56,7 @@ Vue.directive('scrolled', {
   }
 });
 
-Vue.directive('title', {
-  inserted: (el, binding) => document.title = binding.value,
-  update: (el, binding) => document.title = binding.value
-});
-
+Vue.component("vue-headful", VueHeadful);
 Vue.component("app-header", Header);
 Vue.component("save-address-modal", SaveAddrModal);
 
@@ -68,7 +65,12 @@ new Vue({
   i18n: i18n,
   data(){
     return {
-      title : CONFIG.name
+      lang : "en",
+      title : {
+        str : CONFIG.name,
+        key : "",
+        data : ""
+      }
     }
   },
   created(){
@@ -77,16 +79,25 @@ new Vue({
     this.changeLocale(lang);
   },
   methods : {
-    setTitle(page, data){
+    setTitle(key, data = ""){
+      const pageName = this.$t(key);
       data = data ? ` ${data}` : "";
-      this.title = `${page}${data} | ${CONFIG.name}`;
+      this.title = {
+        str : `${pageName}${data} | ${CONFIG.name}`,
+        key : key,
+        data : data
+      }
     },
     changeLocale(locale){
       if(!locale)
         return;
       this._i18n.locale = locale;
       moment.locale(locale);
+      this.lang = locale;
 
+      const pageName = this.$t(this.title.key);
+      this.title.str = `${pageName}${this.title.data} | ${CONFIG.name}`;
+      
       this.$cookie.set("lang", locale, { expires: '1Y' });
 
       this.$emit("changedLocale", locale);

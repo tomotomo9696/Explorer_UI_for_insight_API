@@ -23,7 +23,8 @@
       
       <div class="alert alert-danger" role="alert" v-if="error">
         <div class="font-weight-bold">{{ $t("broadcast.error") }}</div>
-        <div>{{error}}</div>
+        <div v-if="error === 'invalidRawTx'">{{ $t("broadcast.invalidRawTx") }}</div>
+        <div v-else>error</div>
       </div>
     </div>
   </div>
@@ -49,7 +50,7 @@ export default {
     }
   },
   created(){
-    this.$root.setTitle(this.$t("broadcast.title"));
+    this.$root.setTitle("broadcast.title");
   },
   methods: {
     async broadcast(){
@@ -65,7 +66,7 @@ export default {
       try{
         const tx = bitcoin.Transaction.fromHex(this.rawtx);
       }catch(e){
-        this.error = this.$t("broadcast.invalidRawTx");
+        this.error = "invalidRawTx";
         this.ready = true;
         return;
       }
