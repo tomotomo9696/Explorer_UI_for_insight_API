@@ -70,6 +70,28 @@
 
 </template>
 
+<style lang="scss" scoped>
+.tx-box{
+  background-color: $block-background-color;
+  overflow: hidden;
+  padding: 10px;
+  margin: 2em 0px;
+  box-shadow:2px 2px 10px 2px $shadow-color;
+}
+
+.panel-address{
+  background-color: #FFF;
+  overflow: hidden;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  border: 1px solid $border-color;
+  margin: 8px 0px;
+  
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+</style>
+
 <script>
 import CONFIG from "../config";
 

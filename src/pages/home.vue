@@ -49,6 +49,21 @@
 
 </template>
 
+<style lang="scss" scoped>
+.realtime-tx-table{
+  table-layout: fixed;
+}
+.realtime-tx-table td{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.realtime-tx-table td:nth-child(2),
+.realtime-tx-table th:nth-child(2) {
+  text-align: right;
+}
+</style>
+
 <script>
 import CONFIG from "../config";
 

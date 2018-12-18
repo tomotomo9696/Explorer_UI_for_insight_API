@@ -23,25 +23,7 @@ body {
   padding-top: 1em;
 }
 
-.tx-box{
-  background-color: $block-background-color;
-  overflow: hidden;
-  padding: 10px;
-  margin: 2em 0px;
-  box-shadow:2px 2px 10px 2px $shadow-color;
-}
 
-.panel-address{
-  background-color: #FFF;
-  overflow: hidden;
-  padding: 0.5em 1em;
-  border-radius: 4px;
-  border: 1px solid $border-color;
-  margin: 8px 0px;
-  
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
 
 .summary-table > tbody > tr:first-child > td,
 .summary-table > tbody > tr:first-child > th {
@@ -60,28 +42,6 @@ body {
   text-align: right;
 }
 
-.tx-summary-table th{
-  text-align: left;
-}
-.tx-summary-table td{
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  text-align: right;
-}
-
-.realtime-tx-table{
-  table-layout: fixed;
-}
-.realtime-tx-table td{
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.realtime-tx-table td:nth-child(2),
-.realtime-tx-table th:nth-child(2) {
-  text-align: right;
-}
 
 .block-list-table td,
 .block-list-table th{
@@ -152,16 +112,6 @@ hr{
   line-height: 1;
 }
 
-
-.scriptBox{
-  border: 1px solid $border-color;
-  border-radius: 4px;
-  padding: .8em;
-
-  word-break: break-all;
-  word-wrap: break-word;
-  white-space: normal;
-}
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity .3s;

@@ -46,7 +46,11 @@ module.exports = {
             }
           },
           {
-            loader: "sass-loader"
+            loader: "sass-loader",
+            options: {
+              data: `@import "variable.scss";`,
+              includePaths: [path.resolve(__dirname, "src/scss/")]
+            }
           }
         ]
       },

@@ -102,6 +102,30 @@
 
 </template>
 
+
+<style lang="scss" scoped>
+.tx-summary-table th{
+  text-align: left;
+}
+.tx-summary-table td{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: right;
+}
+
+.scriptBox{
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  padding: .8em;
+
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: normal;
+}
+</style>
+
+
 <script>
 import CONFIG from "../config";
 
