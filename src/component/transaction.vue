@@ -3,12 +3,15 @@
 <div class="tx-box">
   <div class="row" v-if="isList">
     <div class="col-12">
-      <div class="copy-button-container">
-        <div class="copy-button-item-data text-truncate">
+      <div class="tx-header-container">
+        <div class="tx-header-txid text-truncate">
           <router-link :to="`/tx/${tx.txid}`">{{tx.txid}}</router-link>
         </div>
-        <div class="copy-button-item-button">
+        <div class="tx-header-copybutton">
           <i class="material-icons md-default align-top copy-button" v-clipboard:copy="tx.txid">content_copy</i>
+        </div>
+        <div class="tx-header-time text-right">
+          {{ tx.time | formatTimestamp }}
         </div>
       </div>
     </div>
@@ -90,10 +93,32 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.tx-header-container {
+  display: flex;
+}
+.tx-header-txid {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 2;
+}
+.tx-header-copybutton {
+  min-width: $font-size-base-icon;
+  flex-basis: $font-size-base-icon;
+  margin-left: 0.5em;
+  flex-grow: 0;
+}
+.tx-header-time {
+  flex-basis: auto;
+  margin-left: 0.5em;
+  flex-grow: 1;
+}
 </style>
 
 <script>
 import CONFIG from "../config";
+
+import moment from "moment";
 
 import util from "../util";
 import script from "../util/script";
@@ -180,6 +205,11 @@ export default {
     },
     valueConvertion(value) {
       return util.valueConvertion(value);
+    }
+  },
+  filters: {
+    formatTimestamp(ts) {
+      return moment(ts, "X").format("lll");
     }
   },
   props: {
