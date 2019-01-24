@@ -5,7 +5,7 @@
 <div class="row" v-if="loaded">
   <div class="mb-4 col-12">
     <div><span class="title">{{ $t("word.address") }}</span></div>
-    <div class="text-muted text-truncate">{{address.addrStr}}</div>
+    <data-box :content="address.addrStr"></data-box>
   </div>
   
   <div class="col-12">
@@ -51,6 +51,7 @@ import CONFIG from "../config";
 
 import Loading from "../component/loading.vue";
 import Tx from "../component/transaction.vue";
+import DataBox from "../component/dataBox.vue";
 
 import request from "../request";
 import util from "../util";
@@ -125,7 +126,8 @@ export default {
   },
   components: {
     "transaction": Tx,
-    "loading": Loading
+    "loading": Loading,
+    "data-box" : DataBox
   }
 }
 </script>

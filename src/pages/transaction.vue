@@ -6,14 +6,7 @@
 <div class="row" v-if="loaded">
   <div class="mb-4 col-12">
     <div class="title">{{ $t("word.transaction") }}</div>
-    <div class="copy-button-container text-muted">
-      <div class="copy-button-item-data text-truncate">
-        {{tx.txid}}
-      </div>
-      <div class="copy-button-item-button">
-        <i class="material-icons md-default align-top copy-button" v-clipboard:copy="tx.txid">content_copy</i>
-      </div>
-    </div>
+    <data-box :content="tx.txid"></data-box>
   </div>
   
   <div class="col-12">
@@ -131,6 +124,7 @@ import CONFIG from "../config";
 
 import Loading from "../component/loading.vue";
 import Tx from "../component/transaction.vue";
+import DataBox from "../component/dataBox.vue";
 
 import Socket from "../socket";
 import request from "../request";
@@ -139,7 +133,7 @@ import script from "../util/script";
 import OP from "../util/opcode";
 
 import moment from "moment";
-import BigNumber from 'bignumber.js';
+import BigNumber from "bignumber.js";
 
 
 export default {
@@ -260,7 +254,8 @@ export default {
   },
   components: {
     "transaction": Tx,
-    "loading": Loading
+    "loading": Loading,
+    "data-box" : DataBox
   }
 }
 </script>

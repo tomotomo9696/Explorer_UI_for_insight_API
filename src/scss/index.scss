@@ -120,25 +120,6 @@ hr{
   opacity: 0;
 }
 
-.copy-button {
-  cursor: pointer;
-}
-
-.copy-button-container {
-  display: flex;
-}
-.copy-button-item-data {
-  max-width: calc(100% - #{$font-size-base-icon});
-  flex-basis: auto;
-  flex-grow: 0;
-}
-.copy-button-item-button {
-  min-width: $font-size-base-icon;
-  flex-basis: $font-size-base-icon;
-  margin-left: 0.5em;
-  flex-grow: 1;
-}
-
 ::-webkit-scrollbar{
   width: 10px;
 }

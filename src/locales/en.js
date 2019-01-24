@@ -119,5 +119,9 @@ module.exports = {
     network : "Network",
     proxy : "Proxy",
     infoErrors : "Info errors"    
+  },
+  copyButton : {
+    copied : "Copied!",
+    copyFailed : "Copy failed"
   }
 }

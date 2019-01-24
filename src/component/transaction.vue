@@ -8,7 +8,7 @@
           <router-link :to="`/tx/${tx.txid}`">{{tx.txid}}</router-link>
         </div>
         <div class="tx-header-copybutton">
-          <i class="material-icons md-default align-top copy-button" v-clipboard:copy="tx.txid">content_copy</i>
+          <copy-button :content="tx.txid"></copy-button>
         </div>
         <div class="tx-header-time text-right">
           {{ tx.time | formatTimestamp }}
@@ -128,6 +128,8 @@ import segwit_addr from "../lib/segwit_addr";
 
 import {Buffer} from "buffer/";
 
+import copyButton from "./copyButton.vue";
+
 
 export default {
   data(){
@@ -216,6 +218,9 @@ export default {
     tx : Object,
     isList : Boolean,
     currentAddr : String
+  },
+  components: {
+    "copy-button": copyButton
   }
 }
 </script>
