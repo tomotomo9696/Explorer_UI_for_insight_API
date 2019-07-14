@@ -14,7 +14,7 @@
   </div>
   
   <div class="col-12">
-    <qrcode-reader @decode="onDecode" @init="onInit" :camera="camera" :paused="paused"></qrcode-reader>
+    <qrcode-stream @decode="onDecode" @init="onInit" :camera="camera"></qrcode-stream>
   </div>
 </div>
 
@@ -26,13 +26,12 @@ import CONFIG from "../config";
 
 import util from "../util";
 
-import { QrcodeReader } from "vue-qrcode-reader";
+import { QrcodeStream } from "vue-qrcode-reader";
 
 export default {
   data(){
     return {
-      camera : {},
-      paused : false,
+      camera : "auto",
       error : ""
     }
   },
@@ -59,7 +58,6 @@ export default {
       }
     },
     onDecode(data){
-      this.paused = true;
       let address = "";
 
       if(data.indexOf(CONFIG.scheme) === 0){
@@ -72,16 +70,15 @@ export default {
       }
       
       if(address){
-        this.camera = false;
+        this.camera = "off";
         this.$router.push({ path : `/address/${address}` });
       }else{
-        this.paused = false;
         this.error = this.$t("scanqr.addressNotFound");
       }
     }
   },
   components: {
-    QrcodeReader
+    QrcodeStream
   }
 }
 </script>
