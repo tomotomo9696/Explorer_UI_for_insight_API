@@ -32,8 +32,11 @@ export default {
   data(){
     return {
       camera : "auto",
-      error : ""
+      errorKey : ""
     }
+  },
+  created(){
+    this.$root.setTitle("scanqr.title");
   },
   methods:{
     async onInit(promise){
@@ -41,19 +44,19 @@ export default {
         await promise;
       }catch (error){
         if(error.name === "NotAllowedError"){
-          this.error = this.$t("scanqr.notAllowed");
+          this.errorKey = "scanqr.notAllowed";
 
         }else if(error.name === "NotFoundError"){
-          this.error = this.$t("scanqr.deviceNotFound");
+          this.errorKey = "scanqr.deviceNotFound";
 
         }else if(error.name === "NotSupportedError"){
-          this.error = this.$t("scanqr.notSupported");
+          this.errorKey = "scanqr.notSupported";
 
         }else if(error.name === "NotReadableError"){
-          this.error = this.$t("scanqr.notReadable");
+          this.errorKey = "scanqr.notReadable";
 
         } else {
-          this.error = this.$t("scanqr.error");
+          this.errorKey = "scanqr.error";
         }
       }
     },
@@ -75,6 +78,11 @@ export default {
       }else{
         this.error = this.$t("scanqr.addressNotFound");
       }
+    }
+  },
+  computed: {
+    error(){
+      return this.$t(this.errorKey);
     }
   },
   components: {
