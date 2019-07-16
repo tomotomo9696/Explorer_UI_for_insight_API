@@ -8,7 +8,11 @@
     <data-box :content="address.addrStr"></data-box>
   </div>
   
-  <div class="col-12">
+  <div class="col-lg-4">
+    <vue-qrcode :value="address.uri" :options="{width:300}" tag="img" class="qrcode-image"></vue-qrcode>
+  </div>
+  
+  <div class="col-lg-8">
     <table class="table summary-table">
       <tbody>
         <tr>
@@ -46,6 +50,15 @@
 
 </template>
 
+<style lang="scss" scoped>
+  .qrcode-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+</style>>
+
 <script>
 import CONFIG from "../config";
 
@@ -56,6 +69,8 @@ import DataBox from "../component/dataBox.vue";
 import request from "../request";
 import util from "../util";
 
+import VueQrcode from "@chenfengyuan/vue-qrcode";
+
 export default {
   data(){
     return {
@@ -64,7 +79,7 @@ export default {
       loaded : false,
       loadedTxs  : false,
       txLoading  : false,
-      pageNum    : 0
+      pageNum    : 0,
     }
   },
   created(){
@@ -93,6 +108,7 @@ export default {
       }
       
       this.address = res;
+      this.address.uri = CONFIG.scheme + ":" + this.address.addrStr;
       this.loaded = true;
       
       this.loadTx(this.address.addrStr);
@@ -127,7 +143,8 @@ export default {
   components: {
     "transaction": Tx,
     "loading": Loading,
-    "data-box" : DataBox
+    "data-box" : DataBox,
+    VueQrcode
   }
 }
 </script>
