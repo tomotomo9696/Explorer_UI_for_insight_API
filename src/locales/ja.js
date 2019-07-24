@@ -6,7 +6,7 @@ module.exports = {
     transaction : "トランザクション",
     transactionHash : "トランザクションハッシュ",
     transactionID : "トランザクションID",
-    transactionCount : "トランザクション数",
+    transactionCount : "取引数",
     address : "アドレス",
     comfirmed : "確認済",
     status : "ステータス",
@@ -79,8 +79,8 @@ module.exports = {
     notFound : "ページが見つかりませんでした"
   },
   saveAddress : {
-    openButton : "保存したアドレス",
-    modalTitle : "保存したアドレス",
+    openButton : "ブックマーク",
+    modalTitle : "ブックマーク",
     description : "よく使うアドレスを保存して、すぐ確認することができます。",
     notFound : "アドレスが保存されていません。",
     placeholder : "保存するアドレス",

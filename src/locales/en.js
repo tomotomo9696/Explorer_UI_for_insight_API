@@ -6,7 +6,7 @@ module.exports = {
     transaction : "Transaction",
     transactionHash : "Transaction hash",
     transactionID : "Transaction ID",
-    transactionCount : "Transaction count",
+    transactionCount : "Transactions",
     address : "Address",
     comfirmed : "Comfirmed",
     status : "Status",
@@ -79,8 +79,8 @@ module.exports = {
     notFound : "Not found"
   },
   saveAddress : {
-    openButton : "Saved addresses",
-    modalTitle : "Saved addresses",
+    openButton : "Bookmark",
+    modalTitle : "Bookmark",
     description : "You can save your address. You can check it immediately.",
     notFound : "There is no saved address.",
     placeholder : "Address to save",
