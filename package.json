@@ -37,7 +37,7 @@
     "bootstrap": "^4.3.1",
     "buffer": "^5.2.1",
     "create-hash": "^1.2.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "material-design-icons": "^3.0.1",
     "moment": "^2.24.0",
     "popper.js": "^1.15.0",
